@@ -42,14 +42,14 @@ public class AgeCalculatorServlet extends HttpServlet {
         
         String age = request.getParameter("age");
         request.setAttribute("age", age);
-        int ageParsed = Integer.parseInt(age);
+        int ageParsed = 0;
         
         if (age == null || age.equals("")) {
             request.setAttribute("message", "You must give your current age");
         }
         else {
-          
-            request.setAttribute("message", "Your age next birthday will be " + (age));
+          ageParsed = Integer.parseInt(age);
+            request.setAttribute("message", "Your age next birthday will be " + (ageParsed + 1));
         }
         
         getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
