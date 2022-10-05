@@ -14,7 +14,7 @@
     <body>
         <h1>Age Calculator</h1>
         <form method="POST" action="Age">
-            Enter your age: <input type="text" name="age"><br>
+            Enter your age: <input type="text" name="age" value="${age}"><br>
             <input type="submit" value="Age next birthday"><br>
         </form>
         ${message}<br>
